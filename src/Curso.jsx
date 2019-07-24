@@ -12,7 +12,7 @@ const Curso = ({ title, image, price, profesor }) => (
                 {profesor}
             </div>
             <div className="s-main-center">
-                <a className="button--ghost-alert button--tiny" href="#">{`$ ${price}`}</a>
+                <a className="button--ghost-alert button--tiny" href="https://ed.team">{`$ ${price}`}</a>
             </div>
         </div>
     </article>
