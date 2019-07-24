@@ -17,7 +17,24 @@ const App = () => (
             </div>
         </div>
         <div className="ed-grid m-grid-3">
-            <Curso />
+            <Curso
+                title="React desde cero"
+                image="https://drupal.ed.team/sites/default/files/imagenes-cdn-edteam/2019-04/React%20Rutas%20manejo%20de%20estados%20%281%29.png"
+                price="20 USD"
+                profesor="Primer Maestro"
+            />
+            <Curso
+                title="Google Ads"
+                image="https://drupal.ed.team/sites/default/files/imagenes-cdn-edteam/2019-06/Google%20ads%20desde%20cero.png"
+                price="30 USD"
+                profesor="Segundo Maestro"
+            />
+            <Curso
+                title="React desde cero 3"
+                image="https://drupal.ed.team/sites/default/files/imagenes-cdn-edteam/2019-04/React%20Rutas%20manejo%20de%20estados%20%281%29.png"
+                price="40 USD"
+                profesor="Tercer Maestro"
+            />
         </div>
     </>
 )
