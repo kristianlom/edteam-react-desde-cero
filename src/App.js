@@ -2,6 +2,33 @@ import React from 'react';
 import "./styles/styles.scss";
 import Curso from './Curso'
 
+const cursos = [
+    {
+        "title": "React desde Cero",
+        "image": "https://drupal.ed.team/sites/default/files/imagenes-cdn-edteam/2019-04/React%20desde%20cero%20%281%29.png",
+        "price": 40,
+        "profesor": "Kristian Lopez"
+    },
+    {
+        "title": "Drupal desde Cero",
+        "image": "https://drupal.ed.team/sites/default/files/styles/medium/public/courses/images/drupal-poster-720_3.jpg?itok=e93ErhMN",
+        "price": 30,
+        "profesor": "Beto Quiroga"
+    },
+    {
+        "title": "Go desde Cero",
+        "image": "https://drupal.ed.team/sites/default/files/styles/medium/public/courses/images/go_0.jpg?itok=k2amLhrN",
+        "price": 50,
+        "profesor": "Alexys Lozada"
+    },
+    {
+        "title": "HTML desde Cero",
+        "image": "https://drupal.ed.team/sites/default/files/styles/medium/public/courses/images/pwa-poster_1.png?itok=CmNPn3bq",
+        "price": 10,
+        "profesor": "Alvaro Felipe"
+    },
+]
+
 const App = () => (
     <>
         <div className="main-banner img-container l-section" id="main-banner">
@@ -17,22 +44,9 @@ const App = () => (
             </div>
         </div>
         <div className="ed-grid m-grid-3">
-            <Curso
-                title="React desde cero"
-                price={20}
-            />
-            <Curso
-                title="Google Ads"
-                image="https://drupal.ed.team/sites/default/files/imagenes-cdn-edteam/2019-06/Google%20ads%20desde%20cero.png"
-                price="30 USD"
-                profesor="Segundo Maestro"
-            />
-            <Curso
-                title="React desde cero 3"
-                image="https://drupal.ed.team/sites/default/files/imagenes-cdn-edteam/2019-04/React%20Rutas%20manejo%20de%20estados%20%281%29.png"
-                price="40 USD"
-                profesor="Tercer Maestro"
-            />
+            {
+                cursos.map(curso => <Curso title={curso.title} image={curso.image} price={curso.price} profesor={curso.profesor} />)
+            }
         </div>
     </>
 )
