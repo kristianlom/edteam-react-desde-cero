@@ -1,36 +1,23 @@
 import React from 'react'
 
-const mayorDeEdad = edad => edad > 18
-
-const persona = { "nombre": "Kristian", "Apellido": "Lopez", "edad": 28 }
+const curso = {
+    "title": "React desde cero",
+    "image": "https://drupal.ed.team/sites/default/files/imagenes-cdn-edteam/2019-04/React%20Rutas%20manejo%20de%20estados%20%281%29.png",
+    "price": "50 USD"
+}
 
 const Curso = () => (
-  <article className="card">
-
-    <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
-      <img src="https://drupal.ed.team/sites/default/files/styles/medium/public/courses/images/go_0.jpg?itok=k2amLhrN" alt="Poster del Curso" />
-    </div>
-    <div className="card__data s-border s-radius-br s-radius-bl s-pxy-2">
-      {
-        mayorDeEdad(persona.edad)
-          ? <h3>Soy Mayor</h3>
-          : <p>Soy menor</p>
-      }
-      <div className="s-mb-2 s-main-center">
-        <div className="card__teacher s-cross-center">
-          <div className="card__avatar s-mr-1">
-            <div className="circle img-container">
-              <img src="https://pbs.twimg.com/profile_images/542147326551130112/2WStfRap_400x400.jpeg" alt="Tio Alexys" />
-            </div>
-          </div>
-          <span className="small">{`${persona.nombre} ${persona.Apellido}`}</span>
+    <article className="card">
+        <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
+            <img src={curso.image} alt={curso.title} />
         </div>
-      </div>
-      <div className="s-main-center">
-        <a className="button--ghost-alert button--tiny" href="#">$ 50USD</a>
-      </div>
-    </div>
-  </article>
+        <div className="card__data s-border s-radius-br s-radius-bl s-pxy-2">
+            <h3 className="center">{curso.title}</h3>
+            <div className="s-main-center">
+                <a className="button--ghost-alert button--tiny" href="#">{`$ ${curso.price}`}</a>
+            </div>
+        </div>
+    </article>
 )
 
 export default Curso
