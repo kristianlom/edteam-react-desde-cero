@@ -19,11 +19,21 @@ class Formulario extends Component {
                     <div className="ed-grid m-grid-2">
                         <div className="form__item">
                             <label htmlFor="nombre">Nombre Completo</label>
-                            <input id="nombre" type="text" />
+                            <input
+                                id="nombre"
+                                type="text"
+                                onChange={e => this.setState({
+                                    nombre: e.target.value
+                                })} />
                         </div>
                         <div className="form__item">
                             <label htmlFor="email">Correo Electrónico</label>
-                            <input id="email" type="email" />
+                            <input
+                                id="email"
+                                type="email"
+                                onChange={e => this.setState({
+                                    email: e.target.value
+                                })} />
                         </div>
                     </div>
                 </form>
