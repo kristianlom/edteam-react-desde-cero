@@ -9,6 +9,20 @@ class Formulario extends Component {
             nombre: "",
             email: ""
         }
+        this.cambiarNombre = this.cambiarNombre.bind(this)
+        this.cambiarEMail = this.cambiarEMail.bind(this)
+    }
+
+    cambiarNombre(e) {
+        this.setState({
+            nombre: e.target.value
+        })
+    }
+
+    cambiarEMail(e) {
+        this.setState({
+            email: e.target.value
+        })
     }
 
     render() {
@@ -22,18 +36,14 @@ class Formulario extends Component {
                             <input
                                 id="nombre"
                                 type="text"
-                                onChange={e => this.setState({
-                                    nombre: e.target.value
-                                })} />
+                                onChange={this.cambiarNombre} />
                         </div>
                         <div className="form__item">
                             <label htmlFor="email">Correo Electrónico</label>
                             <input
                                 id="email"
                                 type="email"
-                                onChange={e => this.setState({
-                                    email: e.target.value
-                                })} />
+                                onChange={this.cambiarEMail} />
                         </div>
                     </div>
                 </form>
@@ -44,7 +54,6 @@ class Formulario extends Component {
             </div>
         )
     }
-
 }
 
 export default Formulario
