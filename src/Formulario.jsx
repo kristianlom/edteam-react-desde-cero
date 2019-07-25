@@ -60,6 +60,13 @@ class Formulario extends Component {
         let elemento = document.getElementById("elemento")
         console.log(elemento)
     }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log(prevProps)
+        console.log(prevState)
+        console.log("-----------------")
+    }
+
 }
 
 
