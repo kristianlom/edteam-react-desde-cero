@@ -4,13 +4,14 @@ import Banner from "./Banner"
 import Formulario from "./Formulario"
 import CourseGrid from './CourseGrid'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import Course from "./Course"
 
 const App = () => (
     <Router>
         <Switch>
             <Route path="/" exact component={Banner} />
-            <Route path="/cursos" component={CourseGrid} />
             <Route path="/cursos/:id" component={Course} />
+            <Route path="/cursos" component={CourseGrid} />
             <Route path="/formulario" component={() => <Formulario name="Página de contacto" />} />
             <Route component={() => (
                 <div className="ed-grid">
