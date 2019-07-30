@@ -1,63 +1,64 @@
-import React, { Component } from "react"
+import React, {Component} from "react"
 
-class Formulario extends Component {
+class Form extends Component {
 
     constructor(props) {
-        super(props)
+        super(props);
 
         this.state = {
-            nombre: "",
+            name: "",
             email: "",
-            fecha: new Date()
-        }
-        this.cambiarNombre = this.cambiarNombre.bind(this)
-        this.cambiarEMail = this.cambiarEMail.bind(this)
-        this.cambiarFecha = this.cambiarFecha.bind(this)
+            date: new Date()
+        };
+        this.changeName = this.changeName.bind(this);
+        this.changeEMail = this.changeEMail.bind(this);
+        this.changeDate = this.changeDate.bind(this);
     }
 
-    cambiarNombre(e) {
+    changeName(e) {
         this.setState({
-            nombre: e.target.value
+            name: e.target.value
         })
     }
 
-    cambiarEMail(e) {
+    changeEMail(e) {
         this.setState({
             email: e.target.value
         })
     }
 
-    cambiarFecha() {
+    changeDate() {
         this.setState({
-            fecha: new Date()
+            date: new Date()
         })
     }
+
     render() {
 
         return (
             <div className="ed-grid">
                 <h1>Formulario</h1>
-                <h4> Fecha actual : {Math.ceil(this.state.fecha / 1000)}</h4>
-                <form id="elemento">
+                <h4> Fecha actual : {Math.ceil(this.state.date / 1000)}</h4>
+                <form id="element">
                     <div className="ed-grid m-grid-2">
                         <div className="form__item">
-                            <label htmlFor="nombre">Nombre Completo</label>
+                            <label htmlFor="name">Nombre Completo</label>
                             <input
-                                id="nombre"
+                                id="name"
                                 type="text"
-                                onChange={this.cambiarNombre} />
+                                onChange={this.changeName}/>
                         </div>
                         <div className="form__item">
                             <label htmlFor="email">Correo Electrónico</label>
                             <input
                                 id="email"
                                 type="email"
-                                onChange={this.cambiarEMail} />
+                                onChange={this.changeEMail}/>
                         </div>
                     </div>
                 </form>
                 <div>
-                    <h2>{`Hola ${this.state.nombre}`}</h2>
+                    <h2>{`Hola ${this.state.name}`}</h2>
                     <span>{`Tu correo es: ${this.state.email}`}</span>
                 </div>
             </div>
@@ -65,9 +66,8 @@ class Formulario extends Component {
     }
 
     componentDidMount() {
-        let elemento = document.getElementById("elemento")
         this.intervaloFecha = setInterval(() => {
-            this.cambiarFecha()
+            this.changeDate();
             console.log(new Date())
         }, 1000)
     }
@@ -81,6 +81,4 @@ class Formulario extends Component {
     }
 }
 
-
-
-export default Formulario
+export default Form
