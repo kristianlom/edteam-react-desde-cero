@@ -9,7 +9,7 @@ const MainMenu = () => (
                     <img src="https://ed.team/static/images/logo-premium.svg" alt="Logo" className="main-logo" />
                 </a>
             </div>
-            <div className="s-grid-1 lg-cols-3 s-cross-center s-main-en">
+            <div className="s-grid-1 lg-cols-3 s-cross-center s-main-end header-links">
                 <nav className="main-menu" id="main-menu">
                     <ul>
                         <li><NavLink exact to="/" activeClassName="activo">Inicio</NavLink></li>
