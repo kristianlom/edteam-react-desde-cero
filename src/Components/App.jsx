@@ -7,6 +7,7 @@ import Course from "./Pages/Course"
 import MainMenu from './Organisms/MainMenu'
 import History from './Pages/History'
 import Home from "../Components/Pages/Home";
+import Users from "./Pages/Users";
 
 const App = () => (
     <Router>
@@ -17,6 +18,7 @@ const App = () => (
             <Route path="/courses" component={CourseGrid}/>
             <Route path="/history/:value" component={History}/>
             <Route path="/history" component={History}/>
+            <Route path="/users" component={Users}/>
             <Route path="/form" component={() => <Form name="Página de contacto"/>}/>
             <Route component={() => (
                 <div className="ed-grid">
