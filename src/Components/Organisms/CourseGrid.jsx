@@ -1,50 +1,45 @@
-import React from "react"
+import React, {Component} from "react"
 import CourseCard from "../Molecules/CourseCard"
+import axios from "axios"
 
-const courses = [
-    {
-        "id": 1,
-        "title": "React desde cero",
-        "image": "https://drupal.ed.team/sites/default/files/imagenes-cdn-edteam/2019-04/React%20desde%20cero%20%281%29.png",
-        "price": 40,
-        "professor": "Beto Quiroga"
-    },
-    {
-        "id": 2,
-        "title": "Drupal desde cero",
-        "image": "https://drupal.ed.team/sites/default/files/styles/medium/public/courses/images/drupal-poster-720_3.jpg?itok=e93ErhMN",
-        "price": 30,
-        "professor": "Beto Quiroga"
-    },
-    {
-        "id": 3,
-        "title": "Go desde cero",
-        "image": "https://drupal.ed.team/sites/default/files/styles/medium/public/courses/images/go_0.jpg?itok=k2amLhrN",
-        "price": 50,
-        "professor": "Alexys Lozada"
-    },
-    {
-        "id": 4,
-        "title": "HTML desde cero",
-        "image": "https://drupal.ed.team/sites/default/files/styles/medium/public/courses/images/HTML-2018.jpg?itok=Gyvm-W9t",
-        "price": 10,
-        "professor": "Alvaro Felipe"
-    },
-];
+class CourseGrid extends Component {
 
-const CourseGrid = () => (
-    <div className="ed-grid m-grid-4">
-        {courses.map(c => (
-            <CourseCard
-                key={c.id}
-                id={c.id}
-                title={c.title}
-                image={c.image}
-                price={c.price}
-                professor={c.professor}
-            />
-        ))}
-    </div>
-);
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            courses: []
+        }
+    }
+
+    componentDidMount() {
+        axios.get('http://my-json-server.typicode.com/kristianlom/edteam-json-db/courses')
+            .then(resp => {
+                this.setState(
+                    {
+                        courses: resp.data
+                    }
+                )
+            })
+    }
+
+    render() {
+        const {courses} = this.state;
+        return (
+            <div className="ed-grid m-grid-4">
+                {courses.map(c => (
+                    <CourseCard
+                        key={c.id}
+                        id={c.id}
+                        title={c.title}
+                        image={c.image}
+                        price={c.price}
+                        professor={c.professor}
+                    />
+                ))}
+            </div>
+        )
+    }
+}
 
 export default CourseGrid;
