@@ -33,7 +33,7 @@ const courses = [
 
 const Course = ({match}) => {
 
-    const currentCourse = courses.filter(c => c.id === parseInt(match.params.id))[0]
+    const currentCourse = courses.filter(c => c.id === parseInt(match.params.id))[0];
 
     return (
         <div className="ed-grid m-grid-3"> {
