@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import UserCard from "../Molecules/UserCard";
 import axios from "axios"
 import UsersGrid from "../Organisms/UsersGrid";
 
@@ -25,7 +24,7 @@ class Users extends Component {
 
     render() {
         const {users} = this.state;
-        return <UsersGrid users={users} />
+        return <UsersGrid users={users}/>
     }
 }
 
