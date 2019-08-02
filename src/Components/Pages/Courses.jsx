@@ -1,32 +1,33 @@
-import React, {Component} from "react"
-import axios from "axios"
-import CourseGrid from "../Organisms/CourseGrid";
+import React, {useState} from "react"
 
-class Courses extends Component {
+const Course = ({match}) => {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            courses: []
+    const [state, setState] = useState({
+        currentCourse: {
+            "id": 1,
+            "title": "React desde cero",
+            "image": "https://drupal.ed.team/sites/default/files/imagenes-cdn-edteam/2019-04/React%20desde%20cero%20%281%29.png",
+            "price": 40,
+            "professor": "Beto Quiroga"
         }
-    }
+    });
 
-    componentDidMount() {
-        axios.get('http://my-json-server.typicode.com/kristianlom/edteam-json-db/courses')
-            .then(resp => {
-                this.setState(
-                    {
-                        courses: resp.data
-                    }
-                )
-            })
-    }
+    console.log(state);
 
-    render() {
-        const {courses} = this.state;
-        return <CourseGrid courses={courses}/>
-    }
-}
+    return (
+        <div className="ed-grid m-grid-3"> {
+            state.currentCourse
+                ?
+                (<>
+                    <h1 className="m-cols-3">{state.currentCourse.title}</h1>
+                    <img className="m-cols-1" src={state.currentCourse.image} alt={state.currentCourse.title}/>
+                    <p className="m-cols-2">Profesor : {state.currentCourse.professor}</p>
+                </>)
+                :
+                <h1>El curso no existe</h1>
+        }
+        </div>
+    )
+};
 
-export default Courses;
+export default Course
