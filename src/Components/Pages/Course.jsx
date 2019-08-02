@@ -1,18 +1,10 @@
-import React, {useEffect, useState} from "react"
-import axios from "axios";
+import React, {useState} from "react"
+import useCourse from "../CustomHooks/useCourse"
 
 const Course = ({match}) => {
 
-    const [course, setCourse] = useState({});
-    const [comment, setComment] = useState("Sin comentarios");
-
-    useEffect(() => {
-        axios.get(`http://my-json-server.typicode.com/kristianlom/edteam-json-db/courses/${match.params.id}`)
-            .then(resp => setCourse(
-                resp.data
-            ))
-    }, []);
-
+    const [comment, setComment] = useState("Sin comentarios")
+    const course = useCourse(match.params.id)
     const myComment = e => {
         setComment(e.target.value)
     }
@@ -38,6 +30,6 @@ const Course = ({match}) => {
         }
         </div>
     )
-};
+}
 
-export default Course;
+export default Course
