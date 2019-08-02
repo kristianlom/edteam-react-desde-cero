@@ -1,6 +1,6 @@
 import React, {Component} from "react"
-import axios from "axios";
-import CourseGrid from "../Organisms/CourseGrid";
+import axios from "axios"
+import CourseGrid from "../Organisms/CourseGrid"
 
 class Courses extends Component {
 
@@ -20,11 +20,11 @@ class Courses extends Component {
     }
 
     render() {
-        const {courses} = this.state;
+        const {courses} = this.state
 
         return <CourseGrid courses={courses}/>
     }
 
 }
 
-export default Courses;
+export default Courses

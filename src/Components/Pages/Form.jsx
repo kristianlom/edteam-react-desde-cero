@@ -3,16 +3,16 @@ import React, {Component} from "react"
 class Form extends Component {
 
     constructor(props) {
-        super(props);
+        super(props)
 
         this.state = {
             name: "",
             email: "",
             date: new Date()
-        };
-        this.changeName = this.changeName.bind(this);
-        this.changeEMail = this.changeEMail.bind(this);
-        this.changeDate = this.changeDate.bind(this);
+        }
+        this.changeName = this.changeName.bind(this)
+        this.changeEMail = this.changeEMail.bind(this)
+        this.changeDate = this.changeDate.bind(this)
     }
 
     changeName(e) {
@@ -67,7 +67,7 @@ class Form extends Component {
 
     componentDidMount() {
         this.intervaloFecha = setInterval(() => {
-            this.changeDate();
+            this.changeDate()
             console.log(new Date())
         }, 1000)
     }

@@ -19,20 +19,20 @@ const CourseCard = ({id, title, image, price, professor}) => (
             </div>
         </div>
     </article>
-);
+)
 
 CourseCard.propTypes = {
     title: PropTypes.string,
     image: PropTypes.string,
     price: PropTypes.number,
     professor: PropTypes.string
-};
+}
 
 CourseCard.defaultProps = {
     title: "No se encontó título",
     image: "https://thumbs.dreamstime.com/x/monstruo-del-vintage-dinosaurio-gigante-en-la-ciudad-blanco-y-negro-120241625.jpg",
     price: "--",
     professor: ""
-};
+}
 
 export default CourseCard

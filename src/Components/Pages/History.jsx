@@ -6,6 +6,6 @@ const History = ({match, location, history}) => (
         Location => {JSON.stringify(location)} <br/>
         History => {JSON.stringify(history)}
     </div>
-);
+)
 
 export default History

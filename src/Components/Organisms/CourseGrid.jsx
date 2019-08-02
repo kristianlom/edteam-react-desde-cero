@@ -1,6 +1,6 @@
 import React from "react"
-import CourseCard from "../Molecules/CourseCard";
-import withLoader from "../HOC/withLoader";
+import CourseCard from "../Molecules/CourseCard"
+import withLoader from "../HOC/withLoader"
 
 const CourseGrid = ({courses}) => (
     <div className="ed-grid m-grid-4">
@@ -17,6 +17,6 @@ const CourseGrid = ({courses}) => (
             ))
         }
     </div>
-);
+)
 
 export default withLoader("courses",CourseGrid)

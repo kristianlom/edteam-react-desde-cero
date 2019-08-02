@@ -1,6 +1,6 @@
 import React from "react"
-import UserCard from "../Molecules/UserCard";
-import withLoader from "../HOC/withLoader";
+import UserCard from "../Molecules/UserCard"
+import withLoader from "../HOC/withLoader"
 
 const UsersGrid = ({users}) => (
 
@@ -18,6 +18,6 @@ const UsersGrid = ({users}) => (
             }
         </div>
     </div>
-);
+)
 
-export default withLoader("users", UsersGrid);
+export default withLoader("users", UsersGrid)

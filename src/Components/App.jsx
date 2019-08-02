@@ -6,8 +6,8 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import Course from "./Pages/Course"
 import MainMenu from './Organisms/MainMenu'
 import History from './Pages/History'
-import Home from "../Components/Pages/Home";
-import Users from "./Pages/Users";
+import Home from "../Components/Pages/Home"
+import Users from "./Pages/Users"
 
 const App = () => (
     <Router>
@@ -28,6 +28,6 @@ const App = () => (
             )}/>
         </Switch>
     </Router>
-);
+)
 
-export default App;
+export default App

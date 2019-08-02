@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import axios from "axios"
-import UsersGrid from "../Organisms/UsersGrid";
+import UsersGrid from "../Organisms/UsersGrid"
 
 class Users extends Component {
     constructor(props) {
-        super(props);
+        super(props)
 
         this.state = {
             users: []
@@ -23,9 +23,9 @@ class Users extends Component {
     }
 
     render() {
-        const {users} = this.state;
+        const {users} = this.state
         return <UsersGrid users={users}/>
     }
 }
 
-export default Users;
+export default Users

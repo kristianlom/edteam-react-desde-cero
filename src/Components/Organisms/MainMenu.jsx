@@ -22,6 +22,6 @@ const MainMenu = () => (
             </div>
         </div>
     </header>
-);
+)
 
 export default MainMenu
