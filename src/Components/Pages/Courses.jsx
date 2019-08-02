@@ -1,32 +1,30 @@
-import React, {useEffect, useState} from "react"
+import React, {Component} from "react"
 import axios from "axios";
+import CourseGrid from "../Organisms/CourseGrid";
 
-const Course = ({match}) => {
+class Courses extends Component {
 
-    const [state, setState] = useState({});
+    constructor(props) {
+        super(props)
 
-    useEffect(() => {
-        console.log("Hola");
-        axios.get(`http://my-json-server.typicode.com/kristianlom/edteam-json-db/courses/4`)
-            .then(resp => setState(
-                resp.data
-            ))
-    }, []);
-
-    return (
-        <div className="ed-grid m-grid-3"> {
-            state
-                ?
-                (<>
-                    <h1 className="m-cols-3">{state.title}</h1>
-                    <img className="m-cols-1" src={state.image} alt={state.title}/>
-                    <p className="m-cols-2">Profesor : {state.professor}</p>
-                </>)
-                :
-                <h1>El curso no existe</h1>
+        this.state = {
+            courses: []
         }
-        </div>
-    )
-};
+    }
 
-export default Course
+    componentDidMount() {
+        axios.get('http://my-json-server.typicode.com/betoquiroga/json-db/cursos')
+            .then(resp => this.setState({
+                courses: resp.data
+            }))
+    }
+
+    render() {
+        const {courses} = this.state;
+
+        return <CourseGrid courses={courses}/>
+    }
+
+}
+
+export default Courses;
