@@ -1,5 +1,6 @@
 import React from "react"
 import {NavLink} from "react-router-dom"
+import CartCounter from "../Atoms/CartCounter";
 
 const MainMenu = () => (
     <header className="main-header">
@@ -16,6 +17,7 @@ const MainMenu = () => (
                         <li><NavLink to="/courses" activeClassName="active">Cursos</NavLink></li>
                         <li><NavLink to="/form" activeClassName="active">Formulario</NavLink></li>
                         <li><NavLink to="/users" activeClassName="active">Usuarios</NavLink></li>
+                        <CartCounter/>
                     </ul>
                 </nav>
                 <div className="main-menu-toggle to-l" id="main-menu-toggle"/>
