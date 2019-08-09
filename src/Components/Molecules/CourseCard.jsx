@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 import {addToCart} from "../../redux/actionsCreators";
 import {connect} from "react-redux"
 
-const CourseCard = ({id, title, image, price, professor, addCourseToCart}) => (
+const CourseCard = ({id, title, image, price, professor, addCourseToCart, cart}) => (
     <article className="card">
         <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
             <Link to={`/courses/${id}`}>
@@ -21,7 +21,11 @@ const CourseCard = ({id, title, image, price, professor, addCourseToCart}) => (
                     className="button--ghost-alert button--tiny"
                     onClick={() => addCourseToCart(id)}
                 >
-                    {`$ ${price}`}
+                    {
+                        cart.find(a => a === id)
+                            ? "Remover del carrito"
+                            : `$ ${price}`
+                    }
                 </button>
             </div>
         </div>
@@ -42,7 +46,9 @@ CourseCard.defaultProps = {
     professor: ""
 };
 
-const mapStateToProps = () => ({})
+const mapStateToProps = state => ({
+    cart: state.cart
+})
 
 const mapDispatchToProps = dispatch => ({
     addCourseToCart(id) {
